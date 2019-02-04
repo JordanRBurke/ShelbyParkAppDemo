@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/fragment_pool_layout"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".PoolSelectionFragment"
+    android:backgroundTint="#ffffff">
+
+    <android.support.constraint.ConstraintLayout
+        android:id="@+id/pool_fragment_constraint"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:layout_width="250dp"
+            android:layout_height="80dp"
+            android:layout_marginTop="30dp"
+            android:fontFamily="monospace"
+            android:text="Pool Selection"
+            android:textAlignment="center"
+            android:textColor="#1b3bc9"
+            android:textSize="30sp"
+            app:layout_constraintLeft_toLeftOf="@id/pool_fragment_constraint"
+            app:layout_constraintRight_toRightOf="@id/pool_fragment_constraint"
+            app:layout_constraintTop_toTopOf="@id/pool_fragment_constraint" />
+
+        <Button
+            android:layout_width="140dp"
+            android:layout_height="120dp"
+            android:layout_marginTop="144dp"
+            android:background="@drawable/baby_pool_image"
+            app:layout_constraintHorizontal_bias="0.172"
+            app:layout_constraintLeft_toLeftOf="@id/pool_fragment_constraint"
+            app:layout_constraintRight_toRightOf="@id/pool_fragment_constraint"
+
+
+            app:layout_constraintTop_toTopOf="@id/pool_fragment_constraint" />
+
+        <Button
+            android:layout_width="140dp"
+            android:layout_height="120dp"
+            android:layout_marginTop="144dp"
+            android:layout_marginLeft="200dp"
+
+            android:background="@drawable/baby_pool_image"
+            app:layout_constraintHorizontal_bias="0.172"
+            app:layout_constraintLeft_toLeftOf="@id/pool_fragment_constraint"
+            app:layout_constraintRight_toRightOf="@id/pool_fragment_constraint"
+            app:layout_constraintTop_toTopOf="@id/pool_fragment_constraint" />
+
+
+
+
+    </android.support.constraint.ConstraintLayout>
+
+
+
+</FrameLayout>

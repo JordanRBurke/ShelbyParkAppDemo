@@ -8,6 +8,18 @@
     tools:context=".MainActivity"
     >
 
+    <FrameLayout
+        android:id="@+id/main_frame_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintLeft_toLeftOf="@id/main_constraint_layout"
+        app:layout_constraintRight_toRightOf="@id/main_constraint_layout"
+        app:layout_constraintTop_toTopOf="@id/main_constraint_layout"
+        app:layout_constraintBottom_toBottomOf="@id/main_constraint_layout"
+        android:elevation="5dp">
+
+    </FrameLayout>
+
     <android.support.design.widget.BottomNavigationView
         android:id="@+id/navigation"
         android:layout_width="0dp"
@@ -31,50 +43,49 @@
         app:layout_constraintTop_toTopOf="@id/main_constraint_layout"
         />
 
-    <ImageView
-        android:layout_width="150dp"
-        android:layout_height="130dp"
-        app:layout_constraintBottom_toBottomOf="@id/main_constraint_layout"
-        app:layout_constraintRight_toRightOf="@id/main_constraint_layout"
-        app:layout_constraintTop_toTopOf="@id/facilities_programs_main"
-        app:srcCompat="@drawable/shelby_county_parks_playground"/>
+
+
+
 
 
     <Button
         style="@style/Widget.AppCompat.Button.Borderless"
-        android:id="@+id/special_events_button_main"
-        android:layout_width="200dp"
-        android:layout_height="60dp"
+        android:id="@+id/pools_button_main"
+        android:layout_width="250dp"
+        android:layout_height="80dp"
         app:layout_constraintLeft_toLeftOf="@id/main_constraint_layout"
         app:layout_constraintRight_toRightOf="@id/main_constraint_layout"
         app:layout_constraintTop_toTopOf="@id/shelby_logo_image"
-        android:layout_marginTop="150dp"
-        android:text="Special events"
-        android:textColor="#0e5917"
-        android:fontFamily="monospace"/>
+        android:layout_marginTop="160dp"
+        android:text="Pools"
+        android:textColor="#FF1B3BC9"
+        android:fontFamily="monospace"
+        android:textSize="20sp"/>
 
     <Button
         style="@style/Widget.AppCompat.Button.Borderless"
-        android:id="@+id/lessons_classes_main"
-        android:layout_width="200dp"
-        android:layout_height="60dp"
+        android:id="@+id/swim_team_button_main"
+        android:layout_width="250dp"
+        android:layout_height="80dp"
         app:layout_constraintLeft_toLeftOf="@id/main_constraint_layout"
         app:layout_constraintRight_toRightOf="@id/main_constraint_layout"
         app:layout_constraintTop_toTopOf="@id/shelby_logo_image"
-        android:layout_marginTop="230dp"
-        android:text="Lessons and Classes"
-        android:textColor="#0e5917"
+        android:layout_marginTop="250dp"
+        android:text="Swim Team"
+        android:textSize="20sp"
+        android:textColor="#FF1B3BC9"
         android:fontFamily="monospace"/>
 
     <Button
         style="@style/Widget.AppCompat.Button.Borderless"
         android:id="@+id/facilities_programs_main"
-        android:layout_width="200dp"
-        android:layout_height="60dp"
-        android:layout_marginTop="310dp"
+        android:layout_width="250dp"
+        android:layout_height="80dp"
+        android:layout_marginTop="340dp"
         android:fontFamily="monospace"
-        android:text="Facilities/programs"
-        android:textColor="#0e5917"
+        android:text="Lessons"
+        android:textSize="20sp"
+        android:textColor="#1b3bc9"
         app:layout_constraintLeft_toLeftOf="@id/main_constraint_layout"
         app:layout_constraintRight_toRightOf="@id/main_constraint_layout"
         app:layout_constraintTop_toTopOf="@id/shelby_logo_image" />
