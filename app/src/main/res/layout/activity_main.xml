@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_constraint_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    >
+
+    <android.support.design.widget.BottomNavigationView
+        android:id="@+id/navigation"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="0dp"
+        android:layout_marginStart="0dp"
+        android:background="?android:attr/windowBackground"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:menu="@menu/navigation" />
+
+    <ImageView
+        android:id="@+id/shelby_logo_image"
+        android:layout_width="180dp"
+        android:layout_height="80dp"
+        app:srcCompat="@drawable/header_logo"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="0dp"
+        app:layout_constraintLeft_toLeftOf="@id/main_constraint_layout"
+        app:layout_constraintTop_toTopOf="@id/main_constraint_layout"
+        />
+
+    <ImageView
+        android:layout_width="150dp"
+        android:layout_height="130dp"
+        app:layout_constraintBottom_toBottomOf="@id/main_constraint_layout"
+        app:layout_constraintRight_toRightOf="@id/main_constraint_layout"
+        app:layout_constraintTop_toTopOf="@id/facilities_programs_main"
+        app:srcCompat="@drawable/shelby_county_parks_playground"/>
+
+
+    <Button
+        style="@style/Widget.AppCompat.Button.Borderless"
+        android:id="@+id/special_events_button_main"
+        android:layout_width="200dp"
+        android:layout_height="60dp"
+        app:layout_constraintLeft_toLeftOf="@id/main_constraint_layout"
+        app:layout_constraintRight_toRightOf="@id/main_constraint_layout"
+        app:layout_constraintTop_toTopOf="@id/shelby_logo_image"
+        android:layout_marginTop="150dp"
+        android:text="Special events"
+        android:textColor="#0e5917"
+        android:fontFamily="monospace"/>
+
+    <Button
+        style="@style/Widget.AppCompat.Button.Borderless"
+        android:id="@+id/lessons_classes_main"
+        android:layout_width="200dp"
+        android:layout_height="60dp"
+        app:layout_constraintLeft_toLeftOf="@id/main_constraint_layout"
+        app:layout_constraintRight_toRightOf="@id/main_constraint_layout"
+        app:layout_constraintTop_toTopOf="@id/shelby_logo_image"
+        android:layout_marginTop="230dp"
+        android:text="Lessons and Classes"
+        android:textColor="#0e5917"
+        android:fontFamily="monospace"/>
+
+    <Button
+        style="@style/Widget.AppCompat.Button.Borderless"
+        android:id="@+id/facilities_programs_main"
+        android:layout_width="200dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="310dp"
+        android:fontFamily="monospace"
+        android:text="Facilities/programs"
+        android:textColor="#0e5917"
+        app:layout_constraintLeft_toLeftOf="@id/main_constraint_layout"
+        app:layout_constraintRight_toRightOf="@id/main_constraint_layout"
+        app:layout_constraintTop_toTopOf="@id/shelby_logo_image" />
+
+</android.support.constraint.ConstraintLayout>
