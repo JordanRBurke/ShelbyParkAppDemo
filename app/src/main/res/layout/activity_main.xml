@@ -8,6 +8,10 @@
     tools:context=".MainActivity"
     >
 
+    <include
+        android:id="@+id/toolbar"
+        layout="@layout/toolbar" />
+
     <FrameLayout
         android:id="@+id/main_frame_layout"
         android:layout_width="match_parent"
@@ -19,6 +23,8 @@
         android:elevation="10dp">
 
     </FrameLayout>
+
+
 
     <android.support.design.widget.BottomNavigationView
         android:id="@+id/navigation"
