@@ -5,4 +5,6 @@
     <color name="colorAccent">#FF4081</color>
     <color name="white">#ffffff</color>
     <color name="whiteTwo">#f4eeee</color>
+    <color name="customColor">#1b67a1</color>
+    <color name="customColorTwo">#135b91</color>
 </resources>
