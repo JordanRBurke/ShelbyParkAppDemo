@@ -21,10 +21,7 @@ import butterknife.OnClick;
 
 public class MainActivity extends AppCompatActivity {
 
-    @BindView(R.id.pools_button_main)
-    protected Button poolButtonMain;
-    @BindView(R.id.swim_team_button_main)
-    protected Button swimTeamButtonMain;
+
     private PoolSelectionFragment poolSelectionFragment;
 
 
@@ -59,7 +56,7 @@ public class MainActivity extends AppCompatActivity {
         ButterKnife.bind(this);
 
         Toolbar toolbar = findViewById(R.id.toolbar);
-//        toolbar.setTitle("");
+        toolbar.setTitle("");
         setSupportActionBar(toolbar);
 
 
@@ -79,13 +76,13 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
-    @OnClick(R.id.pools_button_main)
-    protected void poolSelectionPressed() {
-        poolSelectionFragment = PoolSelectionFragment.newInstance();
-        getSupportFragmentManager().beginTransaction().replace(R.id.main_frame_layout, poolSelectionFragment).commit();
-
-
-    }
+//    @OnClick(R.id.pools_button_main)
+//    protected void poolSelectionPressed() {
+//        poolSelectionFragment = PoolSelectionFragment.newInstance();
+//        getSupportFragmentManager().beginTransaction().replace(R.id.main_frame_layout, poolSelectionFragment).commit();
+//
+//
+//    }
 
     @Override
     public void onBackPressed() {
