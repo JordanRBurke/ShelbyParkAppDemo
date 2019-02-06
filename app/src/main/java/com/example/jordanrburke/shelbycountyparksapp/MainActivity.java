@@ -16,14 +16,21 @@ import android.widget.TextView;
 import android.support.v7.widget.Toolbar;
 import android.widget.Toast;
 
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
 public class MainActivity extends AppCompatActivity {
 
-
+    private FirebaseAuth auth;
+    private FirebaseUser user;
     private PoolSelectionFragment poolSelectionFragment;
+    private LoginFragment loginFragment;
+    @BindView(R.id.main_change_email_button)
+    protected Button changeEmailButton;
 
 
 
@@ -62,6 +69,9 @@ public class MainActivity extends AppCompatActivity {
 
         BottomNavigationView bottomNavigationView = findViewById(R.id.navigation);
         poolSelectionFragment = new PoolSelectionFragment();
+        auth = FirebaseAuth.getInstance();
+        user = auth.getCurrentUser();
+
 
         bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
@@ -78,6 +88,17 @@ public class MainActivity extends AppCompatActivity {
 //        mTextMessage = (TextView) findViewById(R.id.message);
 //        BottomNavigationView navigation = findViewById(R.id.navigation);
 //        navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
+    }
+
+    public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
+        FirebaseUser user = firebaseAuth.getCurrentUser();
+        if (user == null) {
+            Toast.makeText(this, "Please sign in....", Toast.LENGTH_SHORT).show();
+            loginFragment = LoginFragment.newInstance();
+            getSupportFragmentManager().beginTransaction().replace(R.id.main_frame_layout, loginFragment).commit();
+            finish();
+
+        }
     }
 
     private void setFragment(Fragment fragment) {
