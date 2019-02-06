@@ -1,5 +1,6 @@
 package com.example.jordanrburke.shelbycountyparksapp;
 
+import android.content.Intent;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
@@ -29,7 +30,6 @@ public class MainActivity extends AppCompatActivity {
     private FirebaseUser user;
     private PoolSelectionFragment poolSelectionFragment;
     private ForgetAndChangePasswordFragment forgetAndChangePasswordFragment;
-    private LoginFragment loginFragment;
     @BindView(R.id.main_change_email_button)
     protected Button changeEmailButton;
 
@@ -95,8 +95,7 @@ public class MainActivity extends AppCompatActivity {
         FirebaseUser user = firebaseAuth.getCurrentUser();
         if (user == null) {
             Toast.makeText(this, "Please sign in....", Toast.LENGTH_SHORT).show();
-            loginFragment = LoginFragment.newInstance();
-            getSupportFragmentManager().beginTransaction().replace(R.id.main_frame_layout, loginFragment).commit();
+            startActivity(new Intent(MainActivity.this, LoginActivity.class));
             finish();
 
         }
@@ -136,8 +135,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onResume() {
 
         if (auth.getCurrentUser() == null) {
-            loginFragment = LoginFragment.newInstance();
-            getSupportFragmentManager().beginTransaction().replace(R.id.main_frame_layout, loginFragment).commit();
+            startActivity(new Intent(MainActivity.this, LoginActivity.class));
         }
 
         super.onResume();
