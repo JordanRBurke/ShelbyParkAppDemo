@@ -28,6 +28,7 @@ public class MainActivity extends AppCompatActivity {
     private FirebaseAuth auth;
     private FirebaseUser user;
     private PoolSelectionFragment poolSelectionFragment;
+    private ForgetAndChangePasswordFragment forgetAndChangePasswordFragment;
     private LoginFragment loginFragment;
     @BindView(R.id.main_change_email_button)
     protected Button changeEmailButton;
@@ -101,6 +102,13 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
+    @OnClick(R.id.main_change_email_button)
+    protected void changeEmailPressed() {
+        forgetAndChangePasswordFragment = ForgetAndChangePasswordFragment.newInstance();
+        getSupportFragmentManager().beginTransaction().replace(R.id.main_frame_layout, forgetAndChangePasswordFragment).commit();
+
+    }
+
     private void setFragment(Fragment fragment) {
         FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
         fragmentTransaction.replace(R.id.main_frame_layout, fragment);
@@ -122,7 +130,18 @@ public class MainActivity extends AppCompatActivity {
 //        getSupportFragmentManager().beginTransaction().replace(R.id.main_frame_layout, poolSelectionFragment).commit();
 //
 //
-//    }
+//    }\
+
+    @Override
+    protected void onResume() {
+
+        if (auth.getCurrentUser() == null) {
+            loginFragment = LoginFragment.newInstance();
+            getSupportFragmentManager().beginTransaction().replace(R.id.main_frame_layout, loginFragment).commit();
+        }
+
+        super.onResume();
+    }
 
     @Override
     public void onBackPressed() {
