@@ -28,7 +28,6 @@ public class RegisterActivity extends AppCompatActivity {
     protected EditText passwordRegisterText;
     @BindView(R.id.register_button_register)
     protected Button registerButton;
-    @BindView(R.id.sign_in_button_register)
     private FirebaseAuth auth;
 
     @Override

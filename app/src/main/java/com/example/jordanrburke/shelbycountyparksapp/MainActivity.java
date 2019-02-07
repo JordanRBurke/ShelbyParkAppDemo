@@ -29,7 +29,6 @@ public class MainActivity extends AppCompatActivity {
     private FirebaseAuth auth;
     private FirebaseUser user;
     private PoolSelectionFragment poolSelectionFragment;
-    private ForgetAndChangePasswordFragment forgetAndChangePasswordFragment;
     @BindView(R.id.main_change_email_button)
     protected Button changeEmailButton;
 
@@ -103,8 +102,7 @@ public class MainActivity extends AppCompatActivity {
 
     @OnClick(R.id.main_change_email_button)
     protected void changeEmailPressed() {
-        forgetAndChangePasswordFragment = ForgetAndChangePasswordFragment.newInstance();
-        getSupportFragmentManager().beginTransaction().replace(R.id.main_frame_layout, forgetAndChangePasswordFragment).commit();
+
 
     }
 
