@@ -116,4 +116,15 @@
         android:background="@drawable/oval"
         android:layout_marginBottom="30dp"/>
 
+    <Button
+        android:id="@+id/sign_in_button_register"
+        android:layout_width="150dp"
+        android:layout_height="40dp"
+        app:layout_constraintBottom_toTopOf="@id/register_button_register"
+        app:layout_constraintLeft_toLeftOf="@id/register_constraint_layout"
+        app:layout_constraintRight_toRightOf="@id/register_constraint_layout"
+        android:background="@drawable/oval"
+        android:layout_margin="5dp"
+        android:text="Sign In"/>
+
 </android.support.constraint.ConstraintLayout>
