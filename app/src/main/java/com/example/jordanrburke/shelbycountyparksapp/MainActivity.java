@@ -1,5 +1,6 @@
 package com.example.jordanrburke.shelbycountyparksapp;
 
+import android.content.ClipData;
 import android.content.Intent;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
@@ -8,9 +9,11 @@ import android.support.design.widget.BottomNavigationView;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
+import android.transition.Visibility;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.Button;
 import android.widget.FrameLayout;
 import android.widget.TextView;
@@ -31,6 +34,8 @@ public class MainActivity extends AppCompatActivity {
     private PoolSelectionFragment poolSelectionFragment;
     @BindView(R.id.main_change_email_button)
     protected Button changeEmailButton;
+    private MenuItem profileButton;
+
 
 
 
@@ -62,6 +67,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         ButterKnife.bind(this);
+        profileButton = findViewById(R.id.profile_button_main);
 
         Toolbar toolbar = findViewById(R.id.toolbar);
         toolbar.setTitle("");
@@ -71,6 +77,11 @@ public class MainActivity extends AppCompatActivity {
         poolSelectionFragment = new PoolSelectionFragment();
         auth = FirebaseAuth.getInstance();
         user = auth.getCurrentUser();
+
+
+        if (user == null) {
+            profileButton.setVisible(false);
+        }
 
 
         bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {

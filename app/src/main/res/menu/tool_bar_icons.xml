@@ -3,23 +3,24 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <item
+        android:icon="@drawable/profile_menu_icon"
+        android:id="@+id/profile_button_main"
+        android:title="test"
+        app:showAsAction="ifRoom"
+        />
+
+
+
+
+    <item
         android:id="@+id/list_action_1"
         android:title="Log In"
         app:showAsAction="never" />
 
-    <item
-        android:id="@+id/list_action_2"
-        android:title="Log Out"
-        app:showAsAction="never" />
 
     <item
         android:id="@+id/list_action_3"
         android:title="Register"
-        app:showAsAction="never" />
-
-    <item
-        android:id="@+id/list_action_4"
-        android:title="Profile"
         app:showAsAction="never" />
 
     <item
