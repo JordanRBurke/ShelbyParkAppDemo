@@ -38,9 +38,17 @@
             android:elevation="3dp"
             />
 
-        <include
-            android:id="@+id/bottom_navigation"
-            layout="@layout/bottom_navigation"/>
+        <android.support.design.widget.BottomNavigationView android:id="@+id/navigation"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="0dp"
+            android:layout_marginStart="0dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:menu="@menu/navigation"
+            app:itemIconTint="@color/bottom_nav_color"
+            app:itemTextColor="@color/bottom_nav_color"
+            android:background="#353f69"
+            />
 
         <Button
             android:id="@+id/log_out_profile_button"
