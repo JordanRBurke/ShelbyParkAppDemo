@@ -150,6 +150,22 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case R.id.log_in_button_toolbar:
+                Intent intent = new Intent(this, LoginActivity.class);
+                intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                startActivity(intent);
+                Toast.makeText(this, "TEST", Toast.LENGTH_LONG).show();
+                return true;
+                default:
+                    return super.onOptionsItemSelected(item);
+
+        }
+
+    }
+
 
 //    @OnClick(R.id.pools_button_main)
 //    protected void poolSelectionPressed() {
@@ -163,7 +179,8 @@ public class MainActivity extends AppCompatActivity {
     protected void onResume() {
 
         if (auth.getCurrentUser() == null) {
-            startActivity(new Intent(MainActivity.this, LoginActivity.class));
+            Intent intent = new Intent(this, LoginActivity.class);
+            startActivity(intent);
         }
 
         super.onResume();
