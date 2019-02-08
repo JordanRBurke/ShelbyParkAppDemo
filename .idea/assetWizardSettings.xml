@@ -28,7 +28,8 @@
                         </option>
                         <option name="values">
                           <map>
-                            <entry key="outputName" value="profile_menu_icon" />
+                            <entry key="color" value="ffffff" />
+                            <entry key="outputName" value="white_profile_icon" />
                             <entry key="sourceFile" value="C:\Users\Jordan R. Burke" />
                           </map>
                         </option>
