@@ -31,6 +31,7 @@ public class MainActivity extends AppCompatActivity {
 
     private FirebaseAuth auth;
     private FirebaseUser user;
+    private ProfileEditFragment profileEditFragment;
     private PoolSelectionFragment poolSelectionFragment;
     @BindView(R.id.main_change_email_button)
     protected Button changeEmailButton;
@@ -77,6 +78,7 @@ public class MainActivity extends AppCompatActivity {
         poolSelectionFragment = new PoolSelectionFragment();
         auth = FirebaseAuth.getInstance();
         user = auth.getCurrentUser();
+
 
 
         if (user == null) {
@@ -128,6 +130,17 @@ public class MainActivity extends AppCompatActivity {
     public boolean onCreateOptionsMenu(Menu menu) {
         MenuInflater inflater = getMenuInflater();
         inflater.inflate(R.menu.tool_bar_icons, menu);
+
+        profileButton = menu.findItem(R.id.profile_button_main);
+        profileButton.setOnMenuItemClickListener(new MenuItem.OnMenuItemClickListener() {
+            @Override
+            public boolean onMenuItemClick(MenuItem item) {
+
+                profileEditFragment = ProfileEditFragment.newInstance();
+                getSupportFragmentManager().beginTransaction().replace(R.id.main_frame_layout, profileEditFragment).commit();
+                return true;
+            }
+        });
         return true;
     }
 

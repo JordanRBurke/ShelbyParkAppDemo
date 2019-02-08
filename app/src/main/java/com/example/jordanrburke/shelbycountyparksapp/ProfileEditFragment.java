@@ -1,11 +1,20 @@
 package com.example.jordanrburke.shelbycountyparksapp;
 
 
+import android.content.Intent;
 import android.os.Bundle;
-import android.app.Fragment;
+import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+
+import com.google.firebase.FirebaseApp;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+
+import butterknife.BindView;
+import butterknife.OnClick;
 
 
 /**
@@ -13,10 +22,12 @@ import android.view.ViewGroup;
  */
 public class ProfileEditFragment extends Fragment {
 
+    @BindView(R.id.log_out_profile_button)
+    protected Button logOutButton;
+    private FirebaseAuth auth;
+    private FirebaseUser user;
 
-    public ProfileEditFragment() {
-        // Required empty public constructor
-    }
+
 
 
     @Override
@@ -24,6 +35,7 @@ public class ProfileEditFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_profile_edit, container, false);
+
     }
 
     public static ProfileEditFragment newInstance() {
@@ -33,6 +45,14 @@ public class ProfileEditFragment extends Fragment {
         ProfileEditFragment fragment = new ProfileEditFragment();
         fragment.setArguments(args);
         return fragment;
+    }
+
+    @OnClick(R.id.log_out_profile_button)
+    protected void logOutPressed() {
+        FirebaseAuth.getInstance().signOut();
+        Intent intent = new Intent(getContext(), LoginActivity.class);
+        startActivity(intent);
+
     }
 
 }
