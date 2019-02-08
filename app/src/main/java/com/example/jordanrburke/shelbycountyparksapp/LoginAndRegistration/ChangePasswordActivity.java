@@ -1,7 +1,9 @@
-package com.example.jordanrburke.shelbycountyparksapp;
+package com.example.jordanrburke.shelbycountyparksapp.LoginAndRegistration;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+
+import com.example.jordanrburke.shelbycountyparksapp.R;
 
 import butterknife.ButterKnife;
 
