@@ -5,35 +5,45 @@
     android:id="@+id/register_constraint_layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/water_background"
     tools:context=".LoginAndRegistration.RegisterActivity">
 
-    <TextView
-        android:id="@+id/register_text_view"
-        android:layout_width="300dp"
-        android:layout_height="60dp"
-        android:text="Register"
-        android:textAlignment="center"
-        android:textSize="35sp"
-        android:fontFamily="sans-serif"
-        android:textColor="#000000"
-        android:textStyle="bold"
+    <!--<TextView-->
+        <!--android:id="@+id/register_text_view"-->
+        <!--android:layout_width="300dp"-->
+        <!--android:layout_height="60dp"-->
+        <!--android:text="Register"-->
+        <!--android:textAlignment="center"-->
+        <!--android:textSize="35sp"-->
+        <!--android:fontFamily="sans-serif"-->
+        <!--android:textColor="#000000"-->
+        <!--android:textStyle="bold"-->
+        <!--app:layout_constraintLeft_toLeftOf="@id/register_constraint_layout"-->
+        <!--app:layout_constraintTop_toTopOf="@id/register_constraint_layout"-->
+        <!--app:layout_constraintRight_toRightOf="@id/register_constraint_layout"/>-->
+
+    <ImageView
+        android:id="@+id/register_image_view"
+        android:layout_width="190dp"
+        android:layout_height="170dp"
         app:layout_constraintLeft_toLeftOf="@id/register_constraint_layout"
         app:layout_constraintTop_toTopOf="@id/register_constraint_layout"
-        app:layout_constraintRight_toRightOf="@id/register_constraint_layout"/>
+        app:layout_constraintRight_toRightOf="@id/register_constraint_layout"
+        android:background="@drawable/register_icon"/>
 
     <EditText
         android:id="@+id/name_edit_register"
         android:layout_width="250dp"
         android:layout_height="40dp"
-        app:layout_constraintTop_toBottomOf="@id/register_text_view"
+        app:layout_constraintTop_toBottomOf="@id/register_image_view"
         app:layout_constraintLeft_toLeftOf="@id/register_constraint_layout"
         app:layout_constraintRight_toRightOf="@id/register_constraint_layout"
-        android:layout_marginTop="80dp"
-        android:textColor="#000000"
-        android:textColorHint="#000000"
+        android:layout_marginTop="20dp"
+        android:textColor="@color/themeColorOne"
+        android:textColorHint="@color/themeColorOne"
+        android:textAlignment="center"
         android:fontFamily="monospace"
-        android:text="Name"/>
+        android:hint="Name"
+        />
 
     <EditText
         android:id="@+id/email_edit_register"
@@ -42,11 +52,12 @@
         app:layout_constraintTop_toBottomOf="@id/name_edit_register"
         app:layout_constraintLeft_toLeftOf="@id/register_constraint_layout"
         app:layout_constraintRight_toRightOf="@id/register_constraint_layout"
-        android:layout_marginTop="40dp"
-        android:textColor="#000000"
-        android:textColorHint="#000000"
+        android:layout_marginTop="20dp"
+        android:textColor="@color/themeColorOne"
+        android:textColorHint="@color/themeColorOne"
         android:fontFamily="monospace"
-        android:text="Email"/>
+        android:textAlignment="center"
+        android:hint="Email"/>
 
     <EditText
         android:id="@+id/password_edit_register"
@@ -55,11 +66,12 @@
         app:layout_constraintTop_toBottomOf="@id/email_edit_register"
         app:layout_constraintLeft_toLeftOf="@id/register_constraint_layout"
         app:layout_constraintRight_toRightOf="@id/register_constraint_layout"
-        android:layout_marginTop="40dp"
-        android:textColor="#000000"
-        android:textColorHint="#000000"
+        android:layout_marginTop="20dp"
+        android:textColor="@color/themeColorOne"
+        android:textColorHint="@color/themeColorOne"
         android:fontFamily="monospace"
-        android:text="Password"/>
+        android:textAlignment="center"
+        android:hint="Password"/>
 
     <Switch
         android:id="@+id/switch_lifeguard"
@@ -71,6 +83,7 @@
         app:layout_constraintLeft_toLeftOf="@id/register_constraint_layout"
         app:layout_constraintTop_toBottomOf="@id/password_edit_register"
         android:layout_marginTop="30dp"
+        android:layout_marginLeft="40dp"
         />
 
     <Switch
@@ -80,10 +93,12 @@
         android:text="Swimmer"
         tools:layout_editor_absoluteX="150dp"
         tools:layout_editor_absoluteY="383dp"
-        app:layout_constraintTop_toBottomOf="@id/password_edit_register"
+        app:layout_constraintTop_toBottomOf="@id/switch_lifeguard"
         app:layout_constraintLeft_toLeftOf="@id/register_constraint_layout"
-        app:layout_constraintRight_toRightOf="@id/register_constraint_layout"
-        android:layout_marginTop="30dp"/>
+
+        android:layout_marginTop="15dp"
+        android:layout_marginLeft="40dp"
+        />
 
     <Switch
         android:id="@+id/switch_swim_instructor"
@@ -94,16 +109,18 @@
         tools:layout_editor_absoluteY="383dp"
         app:layout_constraintRight_toRightOf="@id/register_constraint_layout"
         app:layout_constraintTop_toBottomOf="@id/password_edit_register"
-        android:layout_marginTop="30dp"/>
+        android:layout_marginTop="30dp"
+        android:layout_marginRight="40dp"/>
 
     <Switch
+        android:id="@+id/patron_switch"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Patron"
-        app:layout_constraintTop_toBottomOf="@id/switch_swimmer"
-        app:layout_constraintLeft_toLeftOf="@id/register_constraint_layout"
+        app:layout_constraintTop_toBottomOf="@id/switch_swim_instructor"
         app:layout_constraintRight_toRightOf="@id/register_constraint_layout"
-        android:layout_marginTop="5dp"/>
+        android:layout_marginTop="15dp"
+        android:layout_marginRight="40dp"/>
 
     <Button
         android:id="@+id/register_button_register"

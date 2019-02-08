@@ -36,7 +36,7 @@
             android:text="Please sign in!"
             android:textSize="28sp"
             android:textAlignment="center"
-            android:textColor="#000000"
+            android:textColor="@color/themeColorOne"
             android:fontFamily="sans-serif"
             android:textStyle="bold"
 
@@ -50,12 +50,8 @@
             android:backgroundTint="#000000"
             android:fontFamily="monospace"
             android:hint="Email"
-            android:shadowColor="#000000"
-            android:singleLine="false"
-            android:textColor="#000000"
-            android:textColorHighlight="#000000"
-            android:textColorHint="#000000"
-            android:textColorLink="#000000"
+            android:textColorHint="@color/themeColorOne"
+            android:textAlignment="center"
             app:layout_constraintLeft_toLeftOf="@id/login_activity_constraint"
             app:layout_constraintRight_toRightOf="@id/login_activity_constraint"
             app:layout_constraintTop_toBottomOf="@id/sign_in_text" />
@@ -65,14 +61,13 @@
             android:layout_width="250dp"
             android:layout_height="40dp"
             android:layout_marginTop="50dp"
-            android:backgroundTint="#000000"
+            android:backgroundTint="@color/themeColorOne"
             android:fontFamily="monospace"
             android:hint="Password"
             android:password="true"
-            android:textColor="#000000"
-            android:textColorHighlight="#000000"
-            android:textColorHint="#000000"
-            android:textColorLink="#000000"
+            android:textColorHint="@color/themeColorOne"
+            android:textColor="@color/themeColorOne"
+            android:textAlignment="center"
             app:layout_constraintLeft_toLeftOf="@id/login_activity_constraint"
             app:layout_constraintRight_toRightOf="@id/login_activity_constraint"
             app:layout_constraintTop_toBottomOf="@id/email_edit_text" />
@@ -84,7 +79,7 @@
             app:layout_constraintBottom_toBottomOf="@id/login_activity_constraint"
             app:layout_constraintLeft_toLeftOf="@id/login_activity_constraint"
             app:layout_constraintRight_toRightOf="@id/login_activity_constraint"
-            android:background="@drawable/oval"
+            android:background="@drawable/rounded_button_grey"
             android:text="Sign In"
             android:layout_marginBottom="10dp"/>
 
@@ -95,7 +90,7 @@
             app:layout_constraintBottom_toTopOf="@id/sign_in_button"
             app:layout_constraintLeft_toLeftOf="@id/login_activity_constraint"
             app:layout_constraintRight_toRightOf="@id/login_activity_constraint"
-            android:background="@drawable/oval"
+            android:background="@drawable/rounded_button_grey"
             android:layout_marginBottom="10dp"
             android:text="register"/>
 
