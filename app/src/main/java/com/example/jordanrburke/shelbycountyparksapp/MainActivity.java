@@ -36,6 +36,7 @@ public class MainActivity extends AppCompatActivity {
     @BindView(R.id.main_change_email_button)
     protected Button changeEmailButton;
     private MenuItem profileButton;
+    private MenuItem logInButton;
 
 
 
@@ -69,6 +70,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         ButterKnife.bind(this);
         profileButton = findViewById(R.id.profile_button_main);
+        logInButton = findViewById(R.id.log_in_button_toolbar);
 
         Toolbar toolbar = findViewById(R.id.toolbar);
         toolbar.setTitle("");
@@ -81,9 +83,11 @@ public class MainActivity extends AppCompatActivity {
 
 
 
-        if (user == null) {
-            profileButton.setVisible(false);
-        }
+//        if (user == null) {
+//
+//            profileButton.setVisible(false);
+//
+//        }
 
 
         bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
@@ -142,6 +146,8 @@ public class MainActivity extends AppCompatActivity {
             }
         });
         return true;
+
+
     }
 
 

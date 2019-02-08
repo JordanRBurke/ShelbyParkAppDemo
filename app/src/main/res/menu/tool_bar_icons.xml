@@ -13,7 +13,7 @@
         />
 
     <item
-        android:id="@+id/list_action_1"
+        android:id="@+id/log_in_button_toolbar"
         android:title="Log In"
         app:showAsAction="never" />
 
