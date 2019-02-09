@@ -28,8 +28,7 @@ public class MainActivity extends AppCompatActivity {
     private FirebaseUser user;
     private ProfileEditFragment profileEditFragment;
     private PoolSelectionFragment poolSelectionFragment;
-    @BindView(R.id.main_change_email_button)
-    protected Button changeEmailButton;
+
     private MenuItem profileButton;
     private MenuItem logInButton;
 
@@ -112,11 +111,6 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-    @OnClick(R.id.main_change_email_button)
-    protected void changeEmailPressed() {
-
-
-    }
 
     private void setFragment(Fragment fragment) {
         FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();

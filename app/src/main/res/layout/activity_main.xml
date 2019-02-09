@@ -93,17 +93,7 @@
         android:background="@drawable/rounded_button_grey"
         />
 
-    <Button
-        android:id="@+id/main_change_email_button"
-        android:layout_width="170dp"
-        android:layout_height="40dp"
-        app:layout_constraintBottom_toBottomOf="@id/main_constraint_layout"
-        app:layout_constraintLeft_toLeftOf="@id/main_constraint_layout"
-        app:layout_constraintRight_toRightOf="@id/main_constraint_layout"
-        android:layout_marginBottom="70dp"
-        android:background="@drawable/oval"
-        android:text="Change Email"
-        android:fontFamily="sans-serif"/>
+    
 
     <Button
         android:id="@+id/main_pool_status_button"
@@ -112,7 +102,7 @@
         app:layout_constraintTop_toTopOf="@id/main_constraint_layout"
         app:layout_constraintRight_toLeftOf="@id/alerts_button_main"
         android:layout_marginTop="70dp"
-        android:layout_marginRight="14dp"
+        android:layout_marginEnd="14dp"
         android:background="@drawable/rounded_button_grey"
         />
 
@@ -120,7 +110,7 @@
         android:id="@+id/baby_pool_status_button"
         android:layout_width="125dp"
         android:layout_height="120dp"
-        android:layout_marginRight="12dp"
+        android:layout_marginEnd="12dp"
         android:layout_marginTop="20dp"
         android:background="@drawable/rounded_button_grey"
         app:layout_constraintLeft_toLeftOf="@id/main_constraint_layout"
@@ -131,7 +121,7 @@
         android:id="@+id/outside_pool_status_button"
         android:layout_width="125dp"
         android:layout_height="120dp"
-        android:layout_marginRight="12dp"
+        android:layout_marginEnd="12dp"
         android:layout_marginTop="160dp"
         android:background="@drawable/rounded_button_grey"
         app:layout_constraintHorizontal_bias="0.833"
@@ -140,6 +130,7 @@
         app:layout_constraintTop_toBottomOf="@id/main_pool_status_button" />
 
     <TextView
+        android:id="@+id/main_pool_status_text"
         android:layout_width="110dp"
         android:layout_height="70dp"
         app:layout_constraintTop_toTopOf="@id/main_pool_status_button"
@@ -155,6 +146,19 @@
 
     <TextView
         android:layout_width="110dp"
+        android:layout_height="30dp"
+        app:layout_constraintTop_toBottomOf="@id/main_pool_status_text"
+        app:layout_constraintLeft_toLeftOf="@id/main_pool_status_button"
+        app:layout_constraintRight_toRightOf="@id/main_pool_status_button"
+        android:text="OPEN"
+        android:elevation="3dp"
+        android:textAlignment="center"
+        android:textColor="@color/green"
+        android:textSize="20sp"/>
+
+    <TextView
+        android:id="@+id/baby_pool_status_text"
+        android:layout_width="110dp"
         android:layout_height="70dp"
         app:layout_constraintTop_toTopOf="@id/baby_pool_status_button"
         app:layout_constraintRight_toRightOf="@id/baby_pool_status_button"
@@ -169,6 +173,19 @@
 
     <TextView
         android:layout_width="110dp"
+        android:layout_height="40dp"
+        app:layout_constraintTop_toBottomOf="@id/baby_pool_status_text"
+        app:layout_constraintLeft_toLeftOf="@id/baby_pool_status_button"
+        app:layout_constraintRight_toRightOf="@id/baby_pool_status_button"
+        android:text="OPEN"
+        android:textAlignment="center"
+        android:elevation="3dp"
+        android:textColor="@color/green"
+        android:textSize="20sp"/>
+
+    <TextView
+        android:id="@+id/outside_pool_status_text"
+        android:layout_width="110dp"
         android:layout_height="70dp"
         app:layout_constraintTop_toTopOf="@id/outside_pool_status_button"
         app:layout_constraintRight_toRightOf="@id/outside_pool_status_button"
@@ -180,6 +197,20 @@
         android:textColor="@color/white"
         android:textStyle="bold"
         android:layout_marginTop="10dp"/>
+
+    <TextView
+        android:layout_width="110dp"
+        android:layout_height="40dp"
+        app:layout_constraintTop_toBottomOf="@id/outside_pool_status_text"
+        app:layout_constraintLeft_toLeftOf="@id/outside_pool_status_button"
+        app:layout_constraintRight_toRightOf="@id/outside_pool_status_button"
+        android:text="OPEN"
+        android:textSize="20sp"
+        android:elevation="3dp"
+        android:textAlignment="center"
+        android:textColor="@color/green"/>
+
+
 
 
 
