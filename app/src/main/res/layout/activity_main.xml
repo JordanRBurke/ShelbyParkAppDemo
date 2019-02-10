@@ -93,7 +93,7 @@
         android:background="@drawable/rounded_button_grey"
         />
 
-    
+
 
     <Button
         android:id="@+id/main_pool_status_button"

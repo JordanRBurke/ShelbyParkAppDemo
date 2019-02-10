@@ -14,6 +14,7 @@ public class RecyclerViewActivity extends AppCompatActivity {
     private RecyclerView mRecyclerView;
     private RecyclerView.Adapter mAdapter;
     private RecyclerView.LayoutManager mLayoutManager;
+    private RecyclerItem recyclerItem;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,8 +26,8 @@ public class RecyclerViewActivity extends AppCompatActivity {
         mLayoutManager = new LinearLayoutManager(this);
         mRecyclerView.setLayoutManager(mLayoutManager);
 
-//        mAdapter = new ListAdapter()
-//        mRecyclerView.setAdapter(mAdapter);
+        mAdapter = new com.example.jordanrburke.shelbycountyparksapp.ListAdapter(new String[]{recyclerItem.setTextOfItem("f")});
+        mRecyclerView.setAdapter(mAdapter);
 
     }
 }

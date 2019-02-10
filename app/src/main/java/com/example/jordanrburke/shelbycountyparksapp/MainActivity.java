@@ -7,6 +7,7 @@ import android.support.design.widget.BottomNavigationView;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.RecyclerView;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -89,7 +90,9 @@ public class MainActivity extends AppCompatActivity {
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
                 int id = item.getItemId();
                 if (id == R.id.navigation_dashboard) {
-                    setFragment(poolSelectionFragment);
+//                    setFragment(poolSelectionFragment);
+                    Intent intent = new Intent(MainActivity.this, RecyclerViewActivity.class);
+                    startActivity(intent);
                 }
                 return false;
             }

@@ -3,13 +3,16 @@ package com.example.jordanrburke.shelbycountyparksapp;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.TextView;
 
 import com.example.jordanrburke.shelbycountyparksapp.LoginAndRegistration.LoginActivity;
+import com.example.jordanrburke.shelbycountyparksapp.LoginAndRegistration.Profile;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
@@ -27,6 +30,9 @@ public class ProfileEditFragment extends Fragment {
     protected Button logOutButton;
     private FirebaseAuth auth;
     private FirebaseUser user;
+    private Profile profile;
+    private TextView nameTextView;
+    private TextView emailTextView;
 
 
 
@@ -38,10 +44,6 @@ public class ProfileEditFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_profile_edit, container, false);
         ButterKnife.bind(this, view);
         return view;
-
-
-
-
 
 
     }
@@ -62,5 +64,32 @@ public class ProfileEditFragment extends Fragment {
         startActivity(intent);
 
     }
+
+    @Override
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+
+        nameTextView.setId(R.id.profile_name_text);
+        emailTextView.setId(R.id.profile_email_text);
+
+        nameTextView.setText("");
+        emailTextView.setText("");
+
+    }
+
+    private void profileLoadInfo() {
+
+
+//        if (profile.getRegisteredName() == null || profile.getRegisteredEmail() == null) {
+//
+//        } else {
+//            nameTextView.setText(profile.getRegisteredName());
+//            emailTextView.setText(profile.getRegisteredEmail());
+//        }
+
+
+    }
+
+
 
 }

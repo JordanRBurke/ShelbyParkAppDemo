@@ -30,6 +30,7 @@ public class RegisterActivity extends AppCompatActivity {
     protected EditText passwordRegisterText;
     @BindView(R.id.register_button_register)
     protected Button registerButton;
+    private Profile profile;
     private FirebaseAuth auth;
 
     @Override
@@ -51,6 +52,11 @@ public class RegisterActivity extends AppCompatActivity {
     protected void registerButtonClicked() {
         final String email = emailRegisterText.getText().toString();
         final String password = passwordRegisterText.getText().toString();
+        final String name = nameRegisterText.getText().toString();
+        profile.setRegisteredName(name);
+        profile.setRegisteredEmail(email);
+
+
 
         try {
             if (password.length() > 0 && email.length() > 0) {
@@ -74,5 +80,9 @@ public class RegisterActivity extends AppCompatActivity {
         } catch (Exception e) {
             e.printStackTrace();
         }
+    }
+
+    private void profileDataMethod() {
+
     }
 }

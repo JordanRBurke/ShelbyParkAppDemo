@@ -21,8 +21,10 @@ public class ListAdapter extends RecyclerView.Adapter<ListAdapter.MyViewHolder> 
     }
 
     public ListAdapter(String[] myDataset) {
-        mDataset = myDataset;
+        this.mDataset = myDataset;
     }
+
+
 
     @Override
     public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
