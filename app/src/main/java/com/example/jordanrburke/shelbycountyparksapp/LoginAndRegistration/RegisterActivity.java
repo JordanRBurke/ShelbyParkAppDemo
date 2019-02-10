@@ -1,6 +1,7 @@
 package com.example.jordanrburke.shelbycountyparksapp.LoginAndRegistration;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -32,12 +33,16 @@ public class RegisterActivity extends AppCompatActivity {
     protected Button registerButton;
     private Profile profile;
     private FirebaseAuth auth;
+    private AppSharedPreferences appSharedPreferences;
+    private SharedPreferences.Editor editor;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
         ButterKnife.bind(this);
+
+        appSharedPreferences = new AppSharedPreferences(getApplicationContext());
 
         auth = FirebaseAuth.getInstance();
 
@@ -53,8 +58,10 @@ public class RegisterActivity extends AppCompatActivity {
         final String email = emailRegisterText.getText().toString();
         final String password = passwordRegisterText.getText().toString();
         final String name = nameRegisterText.getText().toString();
+        profile = new Profile(email, name, "");
         profile.setRegisteredName(name);
         profile.setRegisteredEmail(email);
+        appSharedPreferences.saveStringBody(name);
 
 
 

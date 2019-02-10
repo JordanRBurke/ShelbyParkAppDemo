@@ -41,10 +41,10 @@ public class Profile {
         this.profilePicture = profilePicture;
     }
 
-    public Profile(String registeredEmail, String registeredName, String registeredStatus, ImageView profilePicture) {
+    public Profile(String registeredEmail, String registeredName, String registeredStatus) {
         this.registeredEmail = registeredEmail;
         this.registeredName = registeredName;
         this.registeredStatus = registeredStatus;
-        this.profilePicture = profilePicture;
+//        this.profilePicture = profilePicture;
     }
 }
