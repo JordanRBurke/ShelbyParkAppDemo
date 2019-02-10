@@ -34,6 +34,7 @@ public class LoginActivity extends AppCompatActivity {
     private FirebaseAuth auth;
     private int loginAttempts;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

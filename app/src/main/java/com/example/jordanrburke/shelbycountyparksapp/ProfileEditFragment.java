@@ -85,6 +85,11 @@ public class ProfileEditFragment extends Fragment {
             } else if (appSharedPreferences.getOccupationStatusKey().equals("Swim Instructor")) {
                 statusTextView.setBackgroundColor(getResources().getColor(R.color.swimInstructorColor));
                 statusTextView.setTextColor(getResources().getColor(R.color.white));
+            } else if (appSharedPreferences.getOccupationStatusKey().equals("Other Staff")) {
+                statusTextView.setBackgroundColor(getResources().getColor(R.color.green));
+                statusTextView.setText("Other Staff");
+            } else {
+                statusTextView.setText("");
             }
 //            nameTextView.setText(profile.getRegisteredName());
 //            emailTextView.setText(profile.getRegisteredEmail());
