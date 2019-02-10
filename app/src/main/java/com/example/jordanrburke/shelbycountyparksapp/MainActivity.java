@@ -90,9 +90,9 @@ public class MainActivity extends AppCompatActivity {
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
                 int id = item.getItemId();
                 if (id == R.id.navigation_dashboard) {
-//                    setFragment(poolSelectionFragment);
-                    Intent intent = new Intent(MainActivity.this, RecyclerViewActivity.class);
-                    startActivity(intent);
+                    setFragment(poolSelectionFragment);
+//                    Intent intent = new Intent(MainActivity.this, RecyclerViewActivity.class);
+//                    startActivity(intent);
                 }
                 return false;
             }

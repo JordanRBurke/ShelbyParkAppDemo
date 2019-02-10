@@ -2,18 +2,20 @@ package com.example.jordanrburke.shelbycountyparksapp;
 
 public class RecyclerItem {
 
-    private String TextOfItem;
+    public int imageOfItem;
+    public String textOfItem;
 
     public String getTextOfItem() {
-        return TextOfItem;
-    }
-
-    public String setTextOfItem(String textOfItem) {
-        TextOfItem = textOfItem;
         return textOfItem;
     }
 
-    public RecyclerItem(String textOfItem) {
-        TextOfItem = textOfItem;
+    public String setTextOfItem(String textOfItem) {
+        textOfItem = textOfItem;
+        return textOfItem;
+    }
+
+    public RecyclerItem(int imageId, String textOfItem) {
+        this.imageOfItem = imageOfItem;
+        textOfItem = textOfItem;
     }
 }

@@ -26,8 +26,6 @@ public class RecyclerViewActivity extends AppCompatActivity {
         mLayoutManager = new LinearLayoutManager(this);
         mRecyclerView.setLayoutManager(mLayoutManager);
 
-        mAdapter = new com.example.jordanrburke.shelbycountyparksapp.ListAdapter(new String[]{recyclerItem.setTextOfItem("f")});
-        mRecyclerView.setAdapter(mAdapter);
 
     }
 }

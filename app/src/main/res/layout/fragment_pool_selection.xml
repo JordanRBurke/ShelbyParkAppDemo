@@ -20,9 +20,10 @@
             layout="@layout/toolbar" />
 
         <android.support.v7.widget.RecyclerView
+            android:id="@+id/recycler_view_pools_fragment"
             android:layout_width="match_parent"
             android:layout_height="450dp"
-            android:scrollbars="vertical"
+            android:scrollbars="horizontal"
             app:layout_constraintTop_toBottomOf="@id/toolbar"
             app:layout_constraintLeft_toLeftOf="@id/pool_fragment_constraint"
             app:layout_constraintRight_toRightOf="@id/pool_fragment_constraint"
