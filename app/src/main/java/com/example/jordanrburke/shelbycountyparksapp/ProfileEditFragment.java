@@ -104,23 +104,6 @@ public class ProfileEditFragment extends Fragment {
             nameTextView.setText(appSharedPreferences.getKeySaveBody());
             emailTextView.setText(appSharedPreferences.getProfileEmailKey());
             statusTextView.setText(appSharedPreferences.getOccupationStatusKey());
-            if (appSharedPreferences.getOccupationStatusKey().equals("Lifeguard")) {
-                statusTextView.setBackgroundColor(getResources().getColor(R.color.red));
-                statusTextView.setTextColor(getResources().getColor(R.color.white));
-            } else if (appSharedPreferences.getOccupationStatusKey().equals("Swimmer")) {
-                statusTextView.setBackgroundColor(getResources().getColor(R.color.blue));
-                statusTextView.setTextColor(getResources().getColor(R.color.white));
-            } else if (appSharedPreferences.getOccupationStatusKey().equals("Swim Instructor")) {
-                statusTextView.setBackgroundColor(getResources().getColor(R.color.swimInstructorColor));
-                statusTextView.setTextColor(getResources().getColor(R.color.white));
-            } else if (appSharedPreferences.getOccupationStatusKey().equals("Other Staff")) {
-                statusTextView.setBackgroundColor(getResources().getColor(R.color.green));
-                statusTextView.setText("Other Staff");
-            } else {
-                statusTextView.setText("");
-            }
-//            nameTextView.setText(profile.getRegisteredName());
-//            emailTextView.setText(profile.getRegisteredEmail());
 
         }
 

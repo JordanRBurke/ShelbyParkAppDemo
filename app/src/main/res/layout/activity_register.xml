@@ -63,15 +63,16 @@
         android:id="@+id/password_edit_register"
         android:layout_width="250dp"
         android:layout_height="40dp"
-        app:layout_constraintTop_toBottomOf="@id/email_edit_register"
-        app:layout_constraintLeft_toLeftOf="@id/register_constraint_layout"
-        app:layout_constraintRight_toRightOf="@id/register_constraint_layout"
         android:layout_marginTop="20dp"
+        android:fontFamily="monospace"
+        android:hint="Password"
+        android:password="true"
+        android:textAlignment="center"
         android:textColor="@color/themeColorOne"
         android:textColorHint="@color/themeColorOne"
-        android:fontFamily="monospace"
-        android:textAlignment="center"
-        android:hint="Password"/>
+        app:layout_constraintLeft_toLeftOf="@id/register_constraint_layout"
+        app:layout_constraintRight_toRightOf="@id/register_constraint_layout"
+        app:layout_constraintTop_toBottomOf="@id/email_edit_register" />
 
     <Switch
         android:id="@+id/switch_lifeguard"
@@ -130,7 +131,7 @@
         app:layout_constraintLeft_toLeftOf="@id/register_constraint_layout"
         app:layout_constraintRight_toRightOf="@id/register_constraint_layout"
         android:text="Register"
-        android:background="@drawable/oval"
+        android:background="@drawable/rounded_button_grey"
         android:layout_marginBottom="30dp"/>
 
     <Button
@@ -140,7 +141,7 @@
         app:layout_constraintBottom_toTopOf="@id/register_button_register"
         app:layout_constraintLeft_toLeftOf="@id/register_constraint_layout"
         app:layout_constraintRight_toRightOf="@id/register_constraint_layout"
-        android:background="@drawable/oval"
+        android:background="@drawable/rounded_button_grey"
         android:layout_margin="5dp"
         android:text="Sign In"/>
 
