@@ -1,9 +1,13 @@
 package com.example.jordanrburke.shelbycountyparksapp;
 
 
+import android.app.Activity;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.graphics.Bitmap;
+import android.net.Uri;
 import android.os.Bundle;
+import android.provider.MediaStore;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
@@ -14,6 +18,7 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
+import android.content.ContentResolver;
 
 import com.example.jordanrburke.shelbycountyparksapp.LoginAndRegistration.AppSharedPreferences;
 import com.example.jordanrburke.shelbycountyparksapp.LoginAndRegistration.LoginActivity;
@@ -21,6 +26,8 @@ import com.example.jordanrburke.shelbycountyparksapp.LoginAndRegistration.Profil
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
+import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.util.Objects;
 
 import butterknife.BindView;
@@ -35,6 +42,8 @@ public class ProfileEditFragment extends Fragment {
 
     @BindView(R.id.log_out_profile_button)
     protected Button logOutButton;
+    @BindView(R.id.change_profile_pic_button)
+    protected Button changeProfileButton;
     private FirebaseAuth auth;
     private FirebaseUser user;
     private Profile profile;
@@ -43,6 +52,7 @@ public class ProfileEditFragment extends Fragment {
     private TextView statusTextView;
     private AppSharedPreferences appSharedPreferences;
     private SharedPreferences.Editor editor;
+    public static final int GET_FROM_GALLERY = 3;
 
 
 
@@ -62,6 +72,7 @@ public class ProfileEditFragment extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+
 
         appSharedPreferences = new AppSharedPreferences(Objects.requireNonNull(getContext()));
 
@@ -98,6 +109,29 @@ public class ProfileEditFragment extends Fragment {
 
 
 
+    }
+
+    @OnClick(R.id.change_profile_pic_button)
+    protected void changeProfileClicked() {
+        startActivityForResult(new Intent(Intent.ACTION_PICK, MediaStore.Images.Media.INTERNAL_CONTENT_URI), GET_FROM_GALLERY);
+    }
+
+    @Override
+    public void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if (requestCode==GET_FROM_GALLERY && resultCode == Activity.RESULT_OK) {
+            Uri selectedImage = data.getData();
+            Bitmap bitmap = null;
+            try {
+                bitmap = MediaStore.Images.Media.getBitmap(getContext().getContentResolver(), selectedImage);
+            } catch (FileNotFoundException e) {
+                e.printStackTrace();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+//            changeProfileButton.setBackground(selectedImage);
+
+        }
     }
 
     public static ProfileEditFragment newInstance() {
