@@ -6,6 +6,7 @@ import android.content.SharedPreferences;
 
 public class AppSharedPreferences {
     public static final String KEY_SAVE_BODY = "sms_body";
+    public static final String PROFILE_EMAIL_KEY = "email_body";
     private static final String APP_SHARED_PREFS = AppSharedPreferences.class.getSimpleName();
     private SharedPreferences sharedPreferences;
     private SharedPreferences.Editor preferencesEditor;
@@ -17,11 +18,19 @@ public class AppSharedPreferences {
 
     public String getKeySaveBody() {
         return sharedPreferences.getString(KEY_SAVE_BODY, "");
+    }
 
+    public String getProfileEmailKey() {
+        return sharedPreferences.getString(PROFILE_EMAIL_KEY,"");
     }
 
     public void saveStringBody(String text) {
         preferencesEditor.putString(KEY_SAVE_BODY, text);
+        preferencesEditor.commit();
+    }
+
+    public void saveProfileEmailBody(String email) {
+        preferencesEditor.putString(PROFILE_EMAIL_KEY, email);
         preferencesEditor.commit();
     }
 

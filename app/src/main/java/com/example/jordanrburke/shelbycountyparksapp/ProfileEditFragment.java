@@ -72,6 +72,7 @@ public class ProfileEditFragment extends Fragment {
             nameTextView = getView().findViewById(R.id.profile_name_text);
             emailTextView = getView().findViewById(R.id.profile_email_text);
             nameTextView.setText(appSharedPreferences.getKeySaveBody());
+            emailTextView.setText(appSharedPreferences.getProfileEmailKey());
 //            nameTextView.setText(profile.getRegisteredName());
 //            emailTextView.setText(profile.getRegisteredEmail());
 

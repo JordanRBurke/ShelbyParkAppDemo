@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Switch;
 import android.widget.Toast;
 
 import com.example.jordanrburke.shelbycountyparksapp.MainActivity;
@@ -35,6 +36,8 @@ public class RegisterActivity extends AppCompatActivity {
     private FirebaseAuth auth;
     private AppSharedPreferences appSharedPreferences;
     private SharedPreferences.Editor editor;
+    private Switch lifeguardSwitch;
+    private Switch swimmerSwitch;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -62,6 +65,7 @@ public class RegisterActivity extends AppCompatActivity {
         profile.setRegisteredName(name);
         profile.setRegisteredEmail(email);
         appSharedPreferences.saveStringBody(name);
+        appSharedPreferences.saveProfileEmailBody(email);
 
 
 
