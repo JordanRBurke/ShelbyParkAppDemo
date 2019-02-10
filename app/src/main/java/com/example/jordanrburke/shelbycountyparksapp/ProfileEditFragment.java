@@ -1,10 +1,13 @@
 package com.example.jordanrburke.shelbycountyparksapp;
 
 
+import android.Manifest;
 import android.app.Activity;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.database.Cursor;
 import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
@@ -14,6 +17,7 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.webkit.PermissionRequest;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -28,11 +32,14 @@ import com.google.firebase.auth.FirebaseUser;
 
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.security.Permission;
+import java.security.Permissions;
 import java.util.Objects;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
+import pub.devrel.easypermissions.EasyPermissions;
 
 
 /**
@@ -52,7 +59,10 @@ public class ProfileEditFragment extends Fragment {
     private TextView statusTextView;
     private AppSharedPreferences appSharedPreferences;
     private SharedPreferences.Editor editor;
+    private ImageView profilePicture;
     public static final int GET_FROM_GALLERY = 3;
+    private String[] galleryPermissions = {Manifest.permission.
+            READ_EXTERNAL_STORAGE, Manifest.permission.WRITE_EXTERNAL_STORAGE};
 
 
 
@@ -73,8 +83,15 @@ public class ProfileEditFragment extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
+        if (EasyPermissions.hasPermissions(getContext(), galleryPermissions)) {
+
+        } else {
+            EasyPermissions.requestPermissions(getContext(), "Access for storage",
+                    101, galleryPermissions);
+        }
 
         appSharedPreferences = new AppSharedPreferences(Objects.requireNonNull(getContext()));
+
 
         auth = FirebaseAuth.getInstance();
 
@@ -119,17 +136,33 @@ public class ProfileEditFragment extends Fragment {
     @Override
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
-        if (requestCode==GET_FROM_GALLERY && resultCode == Activity.RESULT_OK) {
+        if (requestCode==GET_FROM_GALLERY && resultCode == Activity.RESULT_OK && null != data) {
             Uri selectedImage = data.getData();
-            Bitmap bitmap = null;
-            try {
-                bitmap = MediaStore.Images.Media.getBitmap(getContext().getContentResolver(), selectedImage);
-            } catch (FileNotFoundException e) {
-                e.printStackTrace();
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-//            changeProfileButton.setBackground(selectedImage);
+            String[] filePathColumn = {MediaStore.Images.Media.DATA};
+            Cursor cursor = getContext().getContentResolver().query(selectedImage, filePathColumn,
+                    null, null, null);
+            cursor.moveToFirst();
+
+            int columnIndex = cursor.getColumnIndex(filePathColumn[0]);
+            String picturePath = cursor.getString(columnIndex);
+            cursor.close();
+
+//            Bitmap bitmap = null;
+//            try {
+//                bitmap = MediaStore.Images.Media.getBitmap(getContext().getContentResolver(), selectedImage);
+//            } catch (FileNotFoundException e) {
+//                e.printStackTrace();
+//            } catch (IOException e) {
+//                e.printStackTrace();
+//            }
+
+            profilePicture = getView().findViewById(R.id.profile_pic_user_choice);
+            profilePicture.setImageBitmap(BitmapFactory.decodeFile(picturePath));
+
+
+
+
+
 
         }
     }
