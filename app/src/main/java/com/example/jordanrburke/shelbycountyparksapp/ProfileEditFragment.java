@@ -40,6 +40,7 @@ public class ProfileEditFragment extends Fragment {
     private Profile profile;
     private TextView nameTextView;
     private TextView emailTextView;
+    private TextView statusTextView;
     private AppSharedPreferences appSharedPreferences;
     private SharedPreferences.Editor editor;
 
@@ -71,8 +72,20 @@ public class ProfileEditFragment extends Fragment {
         } else {
             nameTextView = getView().findViewById(R.id.profile_name_text);
             emailTextView = getView().findViewById(R.id.profile_email_text);
+            statusTextView = getView().findViewById(R.id.profile_occupation_text);
             nameTextView.setText(appSharedPreferences.getKeySaveBody());
             emailTextView.setText(appSharedPreferences.getProfileEmailKey());
+            statusTextView.setText(appSharedPreferences.getOccupationStatusKey());
+            if (appSharedPreferences.getOccupationStatusKey().equals("Lifeguard")) {
+                statusTextView.setBackgroundColor(getResources().getColor(R.color.red));
+                statusTextView.setTextColor(getResources().getColor(R.color.white));
+            } else if (appSharedPreferences.getOccupationStatusKey().equals("Swimmer")) {
+                statusTextView.setBackgroundColor(getResources().getColor(R.color.blue));
+                statusTextView.setTextColor(getResources().getColor(R.color.white));
+            } else if (appSharedPreferences.getOccupationStatusKey().equals("Swim Instructor")) {
+                statusTextView.setBackgroundColor(getResources().getColor(R.color.swimInstructorColor));
+                statusTextView.setTextColor(getResources().getColor(R.color.white));
+            }
 //            nameTextView.setText(profile.getRegisteredName());
 //            emailTextView.setText(profile.getRegisteredEmail());
 

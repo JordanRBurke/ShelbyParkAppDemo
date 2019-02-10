@@ -36,14 +36,27 @@ public class RegisterActivity extends AppCompatActivity {
     private FirebaseAuth auth;
     private AppSharedPreferences appSharedPreferences;
     private SharedPreferences.Editor editor;
+    private boolean switchStatusLifeguard;
+    private boolean switchStatusSwimmer;
+    private boolean switchStatusInstructor;
+    private boolean switchStatusOtherStaff;
     private Switch lifeguardSwitch;
     private Switch swimmerSwitch;
+    private Switch swimInstructor;
+    private Switch otherStaff;
+    private String switchStatusText;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
         ButterKnife.bind(this);
+
+        lifeguardSwitch = findViewById(R.id.switch_lifeguard);
+        swimmerSwitch = findViewById(R.id.switch_swimmer);
+        swimInstructor = findViewById(R.id.switch_swim_instructor);
+        otherStaff = findViewById(R.id.other_staff_switch);
 
         appSharedPreferences = new AppSharedPreferences(getApplicationContext());
 
@@ -61,11 +74,24 @@ public class RegisterActivity extends AppCompatActivity {
         final String email = emailRegisterText.getText().toString();
         final String password = passwordRegisterText.getText().toString();
         final String name = nameRegisterText.getText().toString();
-        profile = new Profile(email, name, "");
+        if (lifeguardSwitch.isChecked()) {
+            switchStatusText = "Lifeguard";
+        } else if (swimmerSwitch.isChecked()){
+            switchStatusText = "Swimmer";
+        } else if (swimInstructor.isChecked()) {
+            switchStatusText = "Swim Instructor";
+        } else if (otherStaff.isChecked()) {
+            switchStatusText = "Other Staff";
+        } else {
+
+        }
+        profile = new Profile(email, name, switchStatusText);
         profile.setRegisteredName(name);
         profile.setRegisteredEmail(email);
+        profile.setRegisteredStatus(switchStatusText);
         appSharedPreferences.saveStringBody(name);
         appSharedPreferences.saveProfileEmailBody(email);
+        appSharedPreferences.saveOccupationStatusKey(switchStatusText);
 
 
 

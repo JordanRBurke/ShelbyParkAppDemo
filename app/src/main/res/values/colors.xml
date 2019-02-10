@@ -10,4 +10,6 @@
     <color name="themeColorOne">#353f69</color>
     <color name="green">#0dea1f</color>
     <color name="red">#fa0505</color>
+    <color name="blue">#0516ff</color>
+    <color name="swimInstructorColor">#035e0b</color>
 </resources>
