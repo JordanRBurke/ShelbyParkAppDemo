@@ -7,7 +7,7 @@
     android:layout_height="match_parent"
     tools:context=".LoginAndRegistration.LoginActivity"
     android:elevation="7dp"
-    android:background="#ffffff">
+    android:background="#c7fff2">
 
     <!-- TODO: Update blank fragment layout -->
 
@@ -18,50 +18,35 @@
 
         <ImageView
             android:id="@+id/login_logo_person"
-            android:layout_width="200dp"
-            android:layout_height="180dp"
+            android:layout_width="300dp"
+            android:layout_height="200dp"
             app:layout_constraintLeft_toLeftOf="@id/login_activity_constraint"
             app:layout_constraintRight_toRightOf="@id/login_activity_constraint"
             app:layout_constraintTop_toTopOf="@id/login_activity_constraint"
-            android:background="@drawable/create_account_logo_black"
+            android:background="@drawable/shelby_county_parks_logo_grey_small"
             />
 
-        <TextView
-            android:id="@+id/sign_in_text"
-            android:layout_width="200dp"
-            android:layout_height="40dp"
-            app:layout_constraintTop_toBottomOf="@id/login_logo_person"
-            app:layout_constraintLeft_toLeftOf="@id/login_activity_constraint"
-            app:layout_constraintRight_toRightOf="@id/login_activity_constraint"
-            android:text="Please sign in!"
-            android:textSize="28sp"
-            android:textAlignment="center"
-            android:textColor="@color/themeColorOne"
-            android:fontFamily="sans-serif"
-            android:textStyle="bold"
-
-            />
 
         <EditText
             android:id="@+id/email_edit_text"
             android:layout_width="250dp"
             android:layout_height="40dp"
             android:layout_marginTop="50dp"
-            android:backgroundTint="#000000"
             android:fontFamily="monospace"
             android:hint="Email"
             android:textColorHint="@color/themeColorOne"
             android:textAlignment="center"
             app:layout_constraintLeft_toLeftOf="@id/login_activity_constraint"
             app:layout_constraintRight_toRightOf="@id/login_activity_constraint"
-            app:layout_constraintTop_toBottomOf="@id/sign_in_text" />
+            app:layout_constraintTop_toBottomOf="@id/login_logo_person"
+            android:background="@drawable/home_page_text_box_background"/>
 
         <EditText
             android:id="@+id/password_edit_text"
             android:layout_width="250dp"
             android:layout_height="40dp"
             android:layout_marginTop="50dp"
-            android:backgroundTint="@color/themeColorOne"
+
             android:fontFamily="monospace"
             android:hint="Password"
             android:password="true"
@@ -70,7 +55,8 @@
             android:textAlignment="center"
             app:layout_constraintLeft_toLeftOf="@id/login_activity_constraint"
             app:layout_constraintRight_toRightOf="@id/login_activity_constraint"
-            app:layout_constraintTop_toBottomOf="@id/email_edit_text" />
+            app:layout_constraintTop_toBottomOf="@id/email_edit_text"
+            android:background="@drawable/home_page_text_box_background"/>
 
         <Button
             android:id="@+id/sign_in_button"
@@ -79,9 +65,10 @@
             app:layout_constraintBottom_toBottomOf="@id/login_activity_constraint"
             app:layout_constraintLeft_toLeftOf="@id/login_activity_constraint"
             app:layout_constraintRight_toRightOf="@id/login_activity_constraint"
-            android:background="@drawable/rounded_button_grey"
+            android:background="@drawable/oval"
             android:text="Sign In"
-            android:layout_marginBottom="10dp"/>
+            android:layout_marginBottom="10dp"
+            android:textColor="@color/white"/>
 
         <Button
             android:id="@+id/login_register_button"
@@ -90,9 +77,10 @@
             app:layout_constraintBottom_toTopOf="@id/sign_in_button"
             app:layout_constraintLeft_toLeftOf="@id/login_activity_constraint"
             app:layout_constraintRight_toRightOf="@id/login_activity_constraint"
-            android:background="@drawable/rounded_button_grey"
+            android:background="@drawable/oval"
             android:layout_marginBottom="10dp"
-            android:text="register"/>
+            android:text="register"
+            android:textColor="@color/white"/>
 
         <Button
             android:id="@+id/forgot_password_button"

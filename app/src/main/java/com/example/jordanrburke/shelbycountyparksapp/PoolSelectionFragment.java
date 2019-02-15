@@ -87,7 +87,7 @@ public class PoolSelectionFragment extends Fragment {
         @NonNull
         @Override
         public HorizonalAdapter.MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-            View itemView = LayoutInflater.from(parent.getContext()).inflate(R.layout.recycler_view_list_item_pool, parent, false);
+            View itemView = LayoutInflater.from(parent.getContext()).inflate(R.layout.pool_item, parent, false);
             return new MyViewHolder(itemView);
         }
 
