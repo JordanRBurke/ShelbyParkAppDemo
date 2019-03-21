@@ -7,7 +7,7 @@
     android:layout_height="match_parent"
     tools:context=".LoginAndRegistration.LoginActivity"
     android:elevation="7dp"
-    android:background="#c7fff2">
+    android:background="@drawable/login_page_possibility_three">
 
     <!-- TODO: Update blank fragment layout -->
 
@@ -23,7 +23,8 @@
             app:layout_constraintLeft_toLeftOf="@id/login_activity_constraint"
             app:layout_constraintRight_toRightOf="@id/login_activity_constraint"
             app:layout_constraintTop_toTopOf="@id/login_activity_constraint"
-            android:background="@drawable/shelby_county_parks_logo_grey_small"
+            android:background="@drawable/new_login_page_logo_for_app"
+            android:layout_marginTop="20dp"
             />
 
 
@@ -34,29 +35,29 @@
             android:layout_marginTop="50dp"
             android:fontFamily="monospace"
             android:hint="Email"
-            android:textColorHint="@color/themeColorOne"
-            android:textAlignment="center"
+            android:elevation="2dp"
+            android:textColorHint="#000000"
             app:layout_constraintLeft_toLeftOf="@id/login_activity_constraint"
             app:layout_constraintRight_toRightOf="@id/login_activity_constraint"
             app:layout_constraintTop_toBottomOf="@id/login_logo_person"
-            android:background="@drawable/home_page_text_box_background"/>
+            />
 
         <EditText
             android:id="@+id/password_edit_text"
             android:layout_width="250dp"
             android:layout_height="40dp"
             android:layout_marginTop="50dp"
-
+            android:elevation="2dp"
             android:fontFamily="monospace"
             android:hint="Password"
-            android:password="true"
-            android:textColorHint="@color/themeColorOne"
-            android:textColor="@color/themeColorOne"
-            android:textAlignment="center"
+            android:textColorHint="#000000"
+            android:textColor="#000000"
             app:layout_constraintLeft_toLeftOf="@id/login_activity_constraint"
             app:layout_constraintRight_toRightOf="@id/login_activity_constraint"
             app:layout_constraintTop_toBottomOf="@id/email_edit_text"
-            android:background="@drawable/home_page_text_box_background"/>
+            />
+
+
 
         <Button
             android:id="@+id/sign_in_button"
@@ -65,10 +66,10 @@
             app:layout_constraintBottom_toBottomOf="@id/login_activity_constraint"
             app:layout_constraintLeft_toLeftOf="@id/login_activity_constraint"
             app:layout_constraintRight_toRightOf="@id/login_activity_constraint"
-            android:background="@drawable/oval"
+            android:background="@drawable/rounded_button_grey_two"
             android:text="Sign In"
             android:layout_marginBottom="10dp"
-            android:textColor="@color/white"/>
+            android:textColor="#000000"/>
 
         <Button
             android:id="@+id/login_register_button"
@@ -77,10 +78,10 @@
             app:layout_constraintBottom_toTopOf="@id/sign_in_button"
             app:layout_constraintLeft_toLeftOf="@id/login_activity_constraint"
             app:layout_constraintRight_toRightOf="@id/login_activity_constraint"
-            android:background="@drawable/oval"
+            android:background="@drawable/rounded_button_grey_two"
             android:layout_marginBottom="10dp"
             android:text="register"
-            android:textColor="@color/white"/>
+            android:textColor="#000000"/>
 
         <Button
             android:id="@+id/forgot_password_button"

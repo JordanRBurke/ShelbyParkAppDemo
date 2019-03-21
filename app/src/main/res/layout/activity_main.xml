@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity"
-    android:background="#c7fff2"
+    android:background="@drawable/login_page_possibility_three"
 
 
 
@@ -26,7 +26,7 @@
         app:menu="@menu/navigation"
         app:itemIconTint="@color/bottom_nav_color"
         app:itemTextColor="@color/bottom_nav_color"
-        android:background="#353f69"
+        android:background="#6f7179"
 
         />
 

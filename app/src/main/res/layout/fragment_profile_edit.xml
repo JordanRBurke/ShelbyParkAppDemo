@@ -12,7 +12,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:id="@+id/profile_constraint_layout"
-        android:background="#c7fff2">
+        android:background="@drawable/login_page_possibility_three">
 
         <include
             android:id="@+id/toolbar"
@@ -71,7 +71,7 @@
             app:layout_constraintBottom_toTopOf="@id/navigation"
             app:layout_constraintLeft_toLeftOf="@id/profile_constraint_layout"
             app:layout_constraintRight_toRightOf="@id/profile_constraint_layout"
-            android:background="@drawable/rounded_button_grey"
+            android:background="@drawable/rounded_button_grey_two"
             android:text="Log Out"
             android:layout_marginBottom="10dp"/>
 
