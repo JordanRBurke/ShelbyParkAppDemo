@@ -5,7 +5,7 @@
     android:elevation="4dp"
     android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
     android:popupTheme="@style/ThemeOverlay.AppCompat.Light"
-    android:background="#353f69"
+    android:background="#6f7179"
 
 
     >
