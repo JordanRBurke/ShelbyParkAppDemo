@@ -15,7 +15,7 @@ public class RecyclerItem {
     }
 
     public RecyclerItem(int imageId, String textOfItem) {
-        this.imageOfItem = imageOfItem;
+        this.imageOfItem = imageId;
         textOfItem = textOfItem;
     }
 }

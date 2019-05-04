@@ -100,7 +100,7 @@ public class PoolSelectionFragment extends Fragment {
             holder.imageView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    String list = recyclerItems.get(position).textOfItem.toString();
+                    String list = recyclerItems.get(position).textOfItem;
                     Toast.makeText(context, list, Toast.LENGTH_SHORT).show();
                 }
             });
