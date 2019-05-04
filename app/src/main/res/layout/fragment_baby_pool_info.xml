@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".BabyPoolInfoFragment"
+    android:id="@+id/baby_pool_info_frame_layout"
+    android:background="@drawable/login_page_possibility_three">
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/baby_pool_info_constraint">
+
+        <ImageView
+            android:layout_width="300dp"
+            android:layout_height="200dp"
+            app:layout_constraintLeft_toLeftOf="@id/baby_pool_info_constraint"
+            app:layout_constraintRight_toRightOf="@id/baby_pool_info_constraint"
+            app:layout_constraintTop_toTopOf="@id/baby_pool_info_constraint"
+            android:background="@drawable/baby_pool_logo"
+            />
+
+        <ImageView
+            android:id="@+id/baby_pool_info_picture"
+            android:layout_width="300dp"
+            android:layout_height="200dp"
+            app:layout_constraintTop_toTopOf="@id/baby_pool_info_constraint"
+            app:layout_constraintLeft_toLeftOf="@id/baby_pool_info_constraint"
+            app:layout_constraintRight_toRightOf="@id/baby_pool_info_constraint"
+            android:layout_marginTop="110dp"
+            android:background="@drawable/baby_pool_image"
+            />
+
+        <ScrollView
+            android:layout_width="350dp"
+            android:layout_height="350dp"
+            app:layout_constraintLeft_toLeftOf="@id/baby_pool_info_constraint"
+            app:layout_constraintRight_toRightOf="@id/baby_pool_info_constraint"
+            app:layout_constraintTop_toBottomOf="@id/baby_pool_info_picture">
+
+            <LinearLayout
+                android:id="@+id/baby_pool_info_fragment_linear_layout"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/baby_pool_info_linear_text_summary"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:text="Summary:"
+                    android:textSize="30sp"
+                    android:textAlignment="center"
+                    android:textColor="#000000"
+                    android:textStyle="bold"
+                    />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="200dp"
+                    android:text="Baby pool has a shallow and deep end, shallow end averages about 2ft and the deep
+end is about 3 and 1/2 ft. Baby pool has one frog slide close to the 2ft marker."
+                    android:textSize="25sp"
+                    android:textColor="#000000"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:text="Rules:"
+                    android:textSize="30sp"
+                    android:textAlignment="center"
+                    android:textColor="#000000"
+                    android:textStyle="bold"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="1) Children below the age of 5 MUST be within arms reach of a parent. \n2) No running on the pool deck, this could result in injury. \n3) Diving is not allowed anywhere in baby pool due to its lack of depth. \n4) Do not eat on the pool deck or in the pool, please use the lobby for food consumption. \n5) The noodles, floaty weights, floaty belts, and kick boards are for aerobics/swim lessons only (Lifejackets are available for use). \n6) Party room is for rental use only. \n7) Do not swing on hand rails, this may cause a child to fall and hit their head. \n8) The frog slide is for kids ages 5 and below. \n8) Kids must avoid the frog slide for risk of getting hit by another kid. \n9) Kids are not allowed to climb up the slide because of other kids going down. \n10) If any of these rules are broken the lifeguard has the ability to sit kids out or take any action within reason to prevent safety hazards from occurring."
+                    android:textSize="25sp"
+                    android:textColor="#000000"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Reasons for closed pool:"
+                    android:textSize="30sp"
+                    android:textStyle="bold"
+                    android:textAlignment="center"
+                    android:textColor="#000000"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="25sp"
+                    android:textColor="#000000"
+                    android:text="The pool can close due to the following 1) Chemicals are at unsafe levels. 2) Human feces or vomit in the pool (Once cleaned it will take 30 minutes to re-open) 3) All pools will be evacuated if lightning warning goes off (After 30 minutes if there is not another warning the pool will open again) 4) If there is a serious medical emergency that requires the presence of the lifeguard watching said pool 5) Any other emergency that is not listed"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="30sp"
+                    android:textStyle="bold"
+                    android:textColor="#000000"
+                    android:textAlignment="center"
+                    android:text="Baby Pool Events:"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="25dp"
+                    android:textColor="#000000"
+                    android:text="1) Party Room (Talk to front desk) \n2) Swim Lessons (Swim lessons occasionally take place in baby pool, please contact front desk for more info) "/>
+
+
+
+
+
+            </LinearLayout>
+
+
+
+        </ScrollView>
+
+
+
+
+
+
+    </android.support.constraint.ConstraintLayout>
+
+
+</FrameLayout>

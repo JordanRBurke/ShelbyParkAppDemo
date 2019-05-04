@@ -8,6 +8,9 @@ import android.provider.ContactsContract;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentTransaction;
+import android.support.v4.util.Pools;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -34,6 +37,8 @@ public class PoolSelectionFragment extends Fragment {
     private RecyclerView.Adapter mAdapter;
     private RecyclerView.LayoutManager mLayoutManager;
     private List<RecyclerItem> recyclerItems;
+    private BabyPoolInfoFragment babyPoolInfoFragment;
+    private PoolSelectionFragment poolSelectionFragment;
     HorizonalAdapter horizonalAdapter;
 
 
@@ -102,6 +107,18 @@ public class PoolSelectionFragment extends Fragment {
                 public void onClick(View v) {
                     String list = recyclerItems.get(position).textOfItem;
                     Toast.makeText(context, list, Toast.LENGTH_SHORT).show();
+                    if (recyclerItems.get(position).textOfItem.equals("Baby Pool")) {
+                        babyPoolInfoFragment = BabyPoolInfoFragment.newInstance();
+                        //PoolSelectionFragment switches to BabyPoolInfoFragment
+                        Fragment fragment = new BabyPoolInfoFragment();
+                        FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
+                        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+                        fragmentTransaction.replace(R.id.fragment_pool_layout, fragment);
+                        fragmentTransaction.addToBackStack(null);
+                        fragmentTransaction.commit();
+
+
+                    }
                 }
             });
 

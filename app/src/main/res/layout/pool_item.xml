@@ -13,6 +13,7 @@
             app:layout_constraintBottom_toBottomOf="@id/pool_item_constraint"
             app:layout_constraintRight_toRightOf="@id/pool_item_constraint"
             android:id="@+id/pool_item_card_view"
+
             >
 
                 <ImageView
@@ -21,6 +22,7 @@
                     android:layout_height="200dp"
                     app:layout_constraintLeft_toLeftOf="@id/pool_item_card_view"
                     app:layout_constraintRight_toRightOf="@id/pool_item_card_view"
+                    android:layout_marginLeft="9dp"
                     />
 
                 <TextView
@@ -29,6 +31,14 @@
                     app:layout_constraintTop_toBottomOf="@id/imageview"
                     app:layout_constraintLeft_toLeftOf="parent"
                     app:layout_constraintRight_toRightOf="parent"
+                    android:layout_marginTop="210dp"
+                    android:layout_marginLeft="9dp"
+                    android:elevation="2dp"
+                    android:textAlignment="center"
+                    android:text="Test"
+                    android:textSize="30sp"
+                    android:textStyle="bold"
+                    android:fontFamily="serif-monospace"
                     android:id="@+id/txtview"/>
 
 
