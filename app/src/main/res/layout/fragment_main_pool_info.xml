@@ -22,12 +22,78 @@
             android:background="@drawable/indoor_pool_logo"/>
 
         <ImageView
+            android:id="@+id/main_pool_image_fragment"
             android:layout_width="300dp"
             android:layout_height="200dp"
             app:layout_constraintTop_toBottomOf="@id/main_pool_image_logo"
             app:layout_constraintLeft_toLeftOf="@id/main_pool_info_constraint"
             app:layout_constraintRight_toRightOf="@id/main_pool_info_constraint"
             android:background="@drawable/indoor_pool_image"/>
+
+        <ScrollView
+            app:layout_constraintTop_toBottomOf="@id/main_pool_image_fragment"
+            app:layout_constraintLeft_toLeftOf="@id/main_pool_info_constraint"
+            app:layout_constraintRight_toRightOf="@id/main_pool_info_constraint"
+            android:layout_width="350dp"
+            android:layout_height="350dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="350dp"
+                    android:layout_height="50dp"
+                    android:text="Summary:"
+                    android:textSize="30sp"
+                    android:textStyle="bold"
+                    android:textAlignment="center"
+                    android:textColor="#000000"/>
+
+                <TextView
+                    android:layout_width="350dp"
+                    android:layout_height="wrap_content"
+                    android:text="The inside pool/main pool is a bigger pool then the baby pool
+and has a diving board at the deep end which is around 11ft while the shallow end is around 5ft.
+Open swim is usually lane 1,2 and 3 where the diving board is while the remaining lines are for
+people wanting to swim laps. There is a sauna for adults close to the deep end of the pool."
+                    android:textColor="#000000"
+                    android:textSize="25sp"
+                    />
+
+                <TextView
+                    android:layout_width="350dp"
+                    android:layout_height="50dp"
+                    android:text="Rules:"
+                    android:textSize="30sp"
+                    android:textStyle="bold"
+                    android:textAlignment="center"
+                    android:textColor="#000000"
+                    />
+
+                <TextView
+                    android:layout_width="350dp"
+                    android:layout_height="wrap_content"
+                    android:text="1) No flotation devices in the deep end or going off the diving board, if they can't swim they shouldn't go off
+                    \n2) Children can not play in the lap lanes, they are for lap swimmers.
+                    \n3} You must be in the pool and actively watching your kid if he/she is below the age of 5.
+                    \n4) No goggles on the diving board, when kids go off they sometimes drop their goggles and go looking for it around the diving board, which is a safety hazard.
+                    \n5} In the event of lightning or thunder both outside and inside pools will close, based on superiors assessment.
+                    \n6) Only adults 18+ can have access to the sauna.
+                    \n7 No running on the pool deck.
+                    \n8 No smoking or vaping on the premises.
+                    \n9 There is no diving allowed in the shallow end, diving in deep end is okay (11ft).
+                    \n10 We call breaks occasionally and when we do kids have to get out unless they are below the age of 5 with an adult, this lasts around 10 minutes.
+                    \n11 No eating or drinking in the pool.
+                    \n12 "
+                    android:textSize="25dp"/>
+
+
+            </LinearLayout>
+
+
+        </ScrollView>
 
 
 
