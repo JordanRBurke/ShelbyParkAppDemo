@@ -86,8 +86,24 @@ people wanting to swim laps. There is a sauna for adults close to the deep end o
                     \n9 There is no diving allowed in the shallow end, diving in deep end is okay (11ft).
                     \n10 We call breaks occasionally and when we do kids have to get out unless they are below the age of 5 with an adult, this lasts around 10 minutes.
                     \n11 No eating or drinking in the pool.
-                    \n12 "
+                    "
                     android:textSize="25dp"/>
+
+                <TextView
+                    android:layout_width="350dp"
+                    android:layout_height="50dp"
+                    android:text="Events:"
+                    android:textSize="30sp"
+                    android:textStyle="bold"
+                    android:textAlignment="center"
+                    android:textColor="#000000"/>
+
+                <TextView
+                    android:layout_width="350dp"
+                    android:layout_height="wrap_content"
+                    android:text="1) Water Aerobics usually is around from 10 to 12am and a class at 6pm (See front desk for more details)
+                    \n2) Swim team occupies most lap lanes from 8 to 11am in the morning and around 4pm in the afternoon
+                    \n3) "/>
 
 
             </LinearLayout>
