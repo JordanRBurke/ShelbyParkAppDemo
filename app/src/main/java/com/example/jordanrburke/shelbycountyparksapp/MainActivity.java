@@ -16,6 +16,7 @@ import android.support.v7.widget.Toolbar;
 import android.widget.Toast;
 
 import com.example.jordanrburke.shelbycountyparksapp.LoginAndRegistration.LoginActivity;
+import com.example.jordanrburke.shelbycountyparksapp.PoolStatusFragments.BabyPoolStatusFragment;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
@@ -25,8 +26,12 @@ import butterknife.OnClick;
 
 public class MainActivity extends AppCompatActivity {
 
+    @BindView(R.id.baby_pool_status_button)
+    protected Button babyStatusButton;
+
     private FirebaseAuth auth;
     private FirebaseUser user;
+    private BabyPoolStatusFragment babyPoolStatusFragment;
     private ProfileEditFragment profileEditFragment;
     private PoolSelectionFragment poolSelectionFragment;
 
@@ -166,6 +171,13 @@ public class MainActivity extends AppCompatActivity {
 //
 //
 //    }\
+
+    @OnClick(R.id.baby_pool_status_button)
+    protected void babyPoolStatusClicked() {
+        babyPoolStatusFragment = BabyPoolStatusFragment.newInstance();
+        getSupportFragmentManager().beginTransaction().replace(R.id.main_frame_layout, babyPoolStatusFragment).commit();
+
+    }
 
     @Override
     protected void onResume() {
